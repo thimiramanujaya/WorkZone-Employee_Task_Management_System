@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Register</title>
+        <link text="stylesheet" rel="stylesheet" href="dashboard-style.css">
+		<link text="stylesheet" rel="stylesheet" href="form-style.css">
+    </head>
+    
+    <body>
+        <div class="page_container">
+            <div class="sidebar_container">
+                <div class="logo_container">
+                    <img src="res/logo.jpg"/>
+                    <h1>WorkZone</h1>
+                </div>
+                <div class="optionlist_container">
+                    <span>Preferences</span>
+                    <a href="Employee.html">Register New Employee</a>
+                    <a href="Task.html">Insert New Task</a>
+                    <a href="Activity.php">Insert New Activity</a>
+                    <a href="assignIndex.php">Assign New Task to Employee</a>
+                    <a href="report.php">Show Detailed Report</a>
+                </div>
+            </div>
+
+            <div class="form_container">
+                <div class="form_box">
+                    <form action="regTask.php" method="post"> 
+                        <table align="center" class="input_box">
+                            <tr>
+                                <td align="center" colspan="2"><h1>Task Register</h1></td>
+                            </tr>
+                            <tr>
+                                <td>Task Id</td>
+                                <td><input type="text" id="tid" name="task_id" required></td>
+                            </tr>
+                            <tr>
+                                <td>Task Name</td>
+                                <td><input type="text" id="tname" name="task_name" required></td>
+                            </tr>
+                            <tr>
+                                <td>Start Date</td>
+                                <td><input type="date" id="strdate" name="start_date" required></td>
+                            </tr>
+                            <tr>
+                                <td>End Date</td>
+                                <td><input type="date" id="enddate" name="end_date" required></td>
+                            </tr>
+                            <tr>
+                                <td>Task Nature</td>
+                                <td><input type="text" id="tnature" name="task_nature" required></td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2"><input type="submit" name="submit" value="SUBMIT" class="button_box"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
