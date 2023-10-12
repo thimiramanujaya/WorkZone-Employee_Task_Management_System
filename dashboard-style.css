@@ -185,6 +185,6 @@
     color: rgb(174, 174, 174);
 }
 
-.table_container table th, td {
+.table_container table, .table_container th, .table_container td {
     border: 1px solid silver;
 }

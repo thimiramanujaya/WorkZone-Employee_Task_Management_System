@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form_container {
+    width: 75%;
+    background: linear-gradient(135deg, #155799, #159957 ); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+	font-size: 40px;
+	padding-bottom: 15px;
+}
+
+
+.container_home {
+	display: flex;
+	border: 2px solid black;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: linear-gradient(135deg, #155799, #159957 ); 
+	/*background: linear-gradient(135deg, #0575e6, #00f260 );*/
+	flex-direction: column;
+}
+
+.container_home h1 {
+	padding-bottom: 50px;
+	font-size: 50px;
+}
+
+.box_container {
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.65);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	border-radius: 15px;
+	color: rgb(182, 182, 182);
+	flex-direction: column;
+	text-align: center;
+}
+
+.box_container a {
+	text-decoration: none;
+	color: aliceblue;
+	padding: 10px;
+	background: linear-gradient(135deg, #155799, #159957 );
+	margin: 5px;
+	border-radius: 8px;
+	width: 50%;
+	font-size: 20px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box_container a:hover {
+	background: linear-gradient(135deg, #2290fd, #24ff91 );
+	color: rgb(86, 86, 86);
+}
+
+.form_box, .report_container {
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.65);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	border-radius: 15px;
+	color: rgb(182, 182, 182);
+	flex-direction: column;
+}
+
+.report_container {
+	width: 80%;
+}
+
+.report_container input {
+	width: 20%;
+}
+
+.input_box input {
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background: rgb(182, 182, 182);
+	font-size: medium;
+	padding: 2px;
+	padding-left: 5px;
+}
+
+.input_box .button_box, .button_box {
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	background: linear-gradient(135deg, #155799, #159957 ); 
+	font-size: medium;
+	padding: 8px;
+	color: aliceblue;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+form td, th {
+	width: 215px;
+	padding: 5px;
+	border-collapse: collapse;
+}
+
+#displayTable th {
+	background: #159957;
+	text-align: center;
+	color: azure;
+}
+
+#displayTable td {
+	text-align: center;
+}
+
+select {
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	background: rgb(182, 182, 182);
+	font-size: medium;
+	padding: 2px;
+}
