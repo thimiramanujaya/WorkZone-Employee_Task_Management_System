@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page_container {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+
+    /*border: 3px solid black;*/
+}
+
+.sidebar_container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(14, 17, 19);
+    border: 2px solid #31384a;
+}
+
+.logo_container {
+    width: 96%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: center;
+    /*background-color: #31384a;*/
+    border-radius: 10px;
+    margin: 4px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(0, 234, 255);
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+.logo_container img {
+    width: 30%;
+    margin: 3px;
+    border-radius: 10px;
+    /*border: 1px solid red; */
+}
+
+.logo_container h1 {
+    width: 70%;
+    margin: 3px;
+    padding-left: 8px;
+    font-size: 30px;
+    color: rgb(206, 206, 206);
+    /*border: 1px solid red;*/
+}
+
+.optionlist_container span {
+    width: 100%;
+    color: rgb(206, 206, 206);
+    padding-right: 5px;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+.optionlist_container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    /*border: 1px solid green;*/
+    margin: 2px;
+    margin-top: 18px;
+}
+
+.optionlist_container a {
+    width: 100%;
+    /*border: 1px solid gold;*/
+    margin: 4px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-decoration: none;
+	color: aliceblue;
+	background: linear-gradient(135deg, #155799, #159957 );
+}
+
+.optionlist_container a:hover {
+    background: linear-gradient(135deg, #2290fd, #24ff91 );
+    color: rgb(86, 86, 86);
+}
+
+.dashview_container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(31, 34, 39);
+    /*border: 1px solid black;*/
+}
+
+.header_container {
+    width: 100%;
+    display: flex;
+    margin-top: 35px;
+    /*border: 1px solid wheat;*/
+}
+
+.greeting_container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid greenyellow;*/
+}
+
+.greeting_container h1 {
+    width: 100%;
+    font-size: 26px;
+    text-align: left;
+    padding-left: 20px;
+    color: rgb(174, 174, 174);
+    /*border: 1px solid aqua;*/
+}
+
+.greeting_container h4 {
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 20px;
+    color: rgb(174, 174, 174);
+    /*border: 1px solid aqua;*/
+
+}
+
+.accountlogo_container {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 1px solid red;*/
+}
+
+.accountlogo_container img {
+    width: 50%;
+    border-radius: 50%;
+    border: 1px solid salmon;
+}
+
+.dashcontent_container {
+    width: 100%;
+    margin-top: 20px;
+    /*border: 1px solid whitesmoke;*/
+}
+
+.dashcontent_container h1 {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+    color: rgb(174, 174, 174);
+    /*border: 1px solid beige;*/
+}
+
+.dashcontent_container h3 {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    color: grey;
+    /*border: 1px solid beige;*/
+    margin-top: 5px;
+}
+
+.table_container {
+    border: 1px solid skyblue;
+    padding: 20px;
+    padding-bottom: 30px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.table_container table {
+    width: 95%;
+    color: rgb(174, 174, 174);
+}
+
+.table_container table th, td {
+    border: 1px solid silver;
+}
