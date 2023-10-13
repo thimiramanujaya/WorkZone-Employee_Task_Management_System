@@ -20,6 +20,10 @@
     border: 2px solid #31384a;
 }
 
+.sidebar_container a {
+    text-decoration: none;
+}
+
 .logo_container {
     width: 96%;
     display: flex;
