@@ -121,7 +121,7 @@ body {
     padding-left: 30px;
 }
 
-#uname, #pwd {
+#uname, #pwd, #email {
     width: 80%;
     padding: 4px;
     padding-left: 6px;
@@ -132,6 +132,10 @@ body {
     background: transparent;
     color: azure;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#uname::placeholder, #email::placeholder {
+    color: rgb(160, 160, 160);
 }
 
 .button {

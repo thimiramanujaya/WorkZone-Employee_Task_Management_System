@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login-WorkZone</title>
+        <title>Signup-WorkZone</title>
         <link rel="stylesheet" href="login-style.css">
     </head>
 
@@ -20,30 +20,34 @@
                     <h3>Employee Task Management System</h3>
                 </div>
                 <div class="right_box">
-                    <form action="login.php" method="post">
+                    <form action="signup.php" method="post">
                         <table>
                             <tr>
-                                <td align="center" colspan="2"><h1>Login</h1></td>
+                                <td align="center" colspan="2"><h1>Sign Up</h1></td>
                             </tr>
                             <tr>
                                 <td><label for="uname" class="text_label">Username</label></td>
                                 <td><input type="text" id="uname" name="username" placeholder="John" required/></td>
                             </tr>
                             <tr>
+                                <td><label for="email" class="text_label">Email</label></td>
+                                <td><input type="email" id="email" name="email" placeholder="john@example.com" required/></td>
+                            </tr>
+                            <tr>
                                 <td><label for="pwd" class="text_label">Password</label></td>
                                 <td><input type="password" id="pwd" name="password" required/></td>
                             </tr>
                             <tr>
-                                <td align="center" colspan="2"><input type="submit" value="Login" class="button" name="login_submit"/></td>
-                            </tr>
-                            <tr>
                                 <td align="center" colspan="2">
-                                    <input type="checkbox" name="login_check"/>
-                                    <label>Remember Me</label>
+                                    <input type="checkbox" name="login_check" required/>
+                                    <label>I agree to the terms & conditions</label>
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" colspan="2"><p>Don't have an account?</p><a href="Signup.html">Sign up</a></td>
+                                <td align="center" colspan="2"><input type="submit" value="Sign Up" class="button" name="signup_submit"/></td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2"><p>Already have an account?</p><a href="Login.html">Log in</a></td>
                             </tr>
                         </table>
                     </form>
