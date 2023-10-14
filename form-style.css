@@ -92,8 +92,13 @@
 	width: 80%;
 }
 
+.report_container h1 {
+	margin-bottom: 30px;
+}
+
 .report_container input {
 	width: 25%;
+	margin-bottom: 10px;
 }
 
 .input_box input {
