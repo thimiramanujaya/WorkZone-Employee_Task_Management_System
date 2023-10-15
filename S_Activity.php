@@ -95,7 +95,7 @@
     <body>
         <div class="page_container">
             <div class="sidebar_container">
-                <a href="Manager_Dashboard.html">
+                <a href="Supervisor_Dashboard.html">
                     <div class="logo_container">
                         <img src="res/logo.jpg"/>
                         <h1>WorkZone</h1>
@@ -103,10 +103,10 @@
                 </a>
                 <div class="optionlist_container">
                     <span>Preferences</span>
-                    <a href="M_Employee.html">Register New Employee</a>
-                    <a href="M_Activity.php">Insert New Activity</a>
-                    <a href="M_AssignIndex.php">Assign New Task to Employee</a>
-                    <a href="M_Report.php">Show Detailed Report</a>
+                    <a href="S_Employee.html">Register New Employee</a>
+                    <a href="S_Activity.php">Insert New Activity</a>
+                    <a href="S_AssignIndex.php">Assign New Task to Employee</a>
+                    <a href="S_Report.php">Show Detailed Report</a>
                 </div>
             </div>
             <div class="form_container">
