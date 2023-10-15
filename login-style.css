@@ -121,7 +121,7 @@ body {
     padding-left: 30px;
 }
 
-#uname, #pwd, #email {
+#uname, #pwd, #c_pwd, #email {
     width: 80%;
     padding: 4px;
     padding-left: 6px;
@@ -139,8 +139,8 @@ body {
 }
 
 .button {
-    width: 60%;
-    height: 80%;
+    width: 55%;
+    height: 35px;
     border-radius: 5px;
     outline: none;
     border: none;
@@ -150,6 +150,7 @@ body {
     color: black;
     background-color: cyan;
     cursor: pointer;
+    vertical-align: middle;
 }
 
 .button:hover {
