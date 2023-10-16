@@ -8,6 +8,38 @@ body {
     background-color: black ;
 }
 
+.alert_box {
+    position: absolute;
+    top: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+    color: azure;
+    background: linear-gradient(to top, #240b36d0, #c31431d0);
+    border-radius: 5px;
+    text-align: center;
+    padding: 6px;
+}
+
+.alert_box h4 {
+    /*border: 1px solid skyblue;*/
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.alert_box button {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.alert_box img {
+    filter: invert(100%);
+}
+
 .page_container {
     width: 100%;
     min-height: 100vh;

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php session_start(); ?>
+
 <html lang="en">
 
     <head>
@@ -9,8 +11,26 @@
         <link rel="stylesheet" href="login-style.css">
     </head>
 
+    <script>
+        function closeAlert() {
+            document.getElementById('alert').style.display = 'none';
+        }
+    </script>
+
     <body>
         <div class="page_container">
+            <?php 
+            if(isset($_SESSION['message'])) {
+                ?>
+                <div class="alert_box" id="alert">
+                    <h4>Hey, <?= $_SESSION['message']; ?></h4>
+                    <button type="button"><img src="res/close_icon.png" width="20px" height="20px" onclick="closeAlert()"/></button>
+                </div>
+
+                <?php
+                unset($_SESSION['message']);
+            }
+            ?>
             <div class="box_container">
                 <div class="left_box">
                     <div class="logo_container">
