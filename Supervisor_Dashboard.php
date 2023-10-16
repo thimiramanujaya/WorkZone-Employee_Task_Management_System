@@ -52,7 +52,7 @@
                 <div class="header_container">
                     <div class="greeting_container">
                         <h4>Good Evening</h4>
-                        <h1>Welcome User</h1>
+                        <h1>Welcome <?= $_SESSION['username'] ?></h1>
                     </div>
                     <div class="accountlogo_container">
                         <img src="res/user-icon.png"/>

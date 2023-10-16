@@ -36,6 +36,7 @@
     filter: invert(100%);
 }
 
+
 .form_container {
 	width: 75%;
 }
@@ -60,19 +61,85 @@
 
 
 .container_home {
+	width: 100%;
 	display: flex;
-	border: 2px solid black;
-	justify-content: center;
+	/*border: 2px solid black;*/
+	padding-top: 25px;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 	background: linear-gradient(135deg, #155799, #159957 ); 
 	/*background: linear-gradient(135deg, #0575e6, #00f260 );*/
 	flex-direction: column;
 }
 
-.container_home h1 {
-	padding-bottom: 50px;
+.container_home .box_container h1 {
+	padding-bottom: 30px;
 	font-size: 50px;
+}
+
+.e_dash_header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 35px;
+	background-color: rgba(0, 0, 0, 0.35);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(20px);
+	padding: 10px;
+	margin-left: 30px;
+	margin-right: 30px;
+	border-radius: 15px;
+	color: rgb(182, 182, 182);
+}
+
+.logo_container {
+	width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: center;
+    /*background-color: #31384a;*/
+    border-radius: 10px;
+    margin: 2px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(0, 234, 255);
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+.logo_container img {
+    width: 30%;
+    margin: 3px;
+    border-radius: 10px;
+    /*border: 1px solid red; */
+}
+
+.container_home .logo_container h1 {
+    width: 70%;
+    margin: 3px;
+    padding-left: 8px;
+    font-size: 40px;
+    color: rgb(206, 206, 206);
+    /*border: 1px solid red;*/
+}
+
+.e_dash_header a {
+	text-decoration: none;
+}
+
+.accountlogo_container {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	
+    /*border: 1px solid red;*/
+}
+
+.accountlogo_container img {
+    width: 50%;
+	border: 3px solid yellowgreen;
+    border-radius: 50%;
+	filter: invert(80%);
 }
 
 .box_container {
