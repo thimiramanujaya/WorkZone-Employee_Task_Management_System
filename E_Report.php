@@ -38,6 +38,7 @@
 
     <body>
         <div class="e_form_container">
+        <a href="Employee_Dashboard.php"><img src="res/back_arrow.png" width="32px" height="32px"/> Back to Dashboard</a>
             <div class="report_container">
                 <h1>Assigned Activities</h1>
                 <form method="get">
