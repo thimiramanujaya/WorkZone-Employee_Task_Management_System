@@ -40,8 +40,8 @@
                 $insert_result = mysqli_query($conn, $insert_query);
 
                 if($insert_result) {
-                    $_SESSION['message'] = "Registered Sucessfully!";
-                    header('Location: Login.html');
+                    $_SESSION['message'] = "Registered Successfully!, Now you can login to the system here ";
+                    header('Location: Login.php');
                 }
                 else {
                     $_SESSION['message'] = "Something went wrong!";

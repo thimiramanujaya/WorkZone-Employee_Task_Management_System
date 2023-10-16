@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+
+    if(isset($_SESSION['auth'])) {
+        $_SESSION['message'] = "You are already logged In";
+        header('Location: Employee_Dashboard.php');
+        exit();
+    }
+?>
 
 <html lang="en">
 
@@ -71,7 +79,7 @@
                                 <td align="center" colspan="2"><input type="submit" value="Sign Up" class="button" name="signup_submit"/></td>
                             </tr>
                             <tr>
-                                <td align="center" colspan="2"><p>Already have an account?</p><a href="Login.html">Log in</a></td>
+                                <td align="center" colspan="2"><p>Already have an account?</p><a href="Login.php">Log in</a></td>
                             </tr>
                         </table>
                     </form>

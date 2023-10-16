@@ -52,6 +52,7 @@
                     <a href="S_Activity.php">Insert New Activity</a>
                     <a href="S_AssignIndex.php">Assign New Task to Employee</a>
                     <a href="S_Report.php">Show Detailed Report</a>
+                    <a href="Logout.php">Logout</a>
                 </div>
             </div>
 

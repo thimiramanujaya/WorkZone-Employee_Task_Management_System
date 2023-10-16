@@ -4,6 +4,38 @@
     box-sizing: border-box;
 }
 
+.index_alert_box {
+    position: absolute;
+    top: 10px;
+    left: 55%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+    color: azure;
+	background-color: rgba(0, 0, 255, 0.826);
+    border-radius: 5px;
+    text-align: center;
+    padding: 6px;
+}
+
+.index_alert_box h4 {
+    /*border: 1px solid skyblue;*/
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.index_alert_box button {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.index_alert_box img {
+    filter: invert(100%);
+}
+
 .page_container {
     width: 100%;
     display: flex;
