@@ -28,8 +28,8 @@
                 </a>
                 <div class="optionlist_container">
                     <span>Preferences</span>
-                    <a href="M_Employee.html">Register New Employee</a>
-                    <a href="M_Task.html">Insert New Task</a>
+                    <a href="M_Employee.php">Register New Employee</a>
+                    <a href="M_Task.php">Insert New Task</a>
                     <a href="M_Activity.php">Insert New Activity</a>
                     <a href="M_AssignIndex.php">Assign New Task to Employee</a>
                     <a href="M_Report.php">Show Detailed Report</a>
