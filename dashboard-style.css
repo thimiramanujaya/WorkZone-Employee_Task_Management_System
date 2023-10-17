@@ -178,6 +178,8 @@
     width: 50%;
     border-radius: 50%;
     border: 1px solid salmon;
+    filter: invert(100%);
+    padding: 5px;
 }
 
 .dashcontent_container {
@@ -218,9 +220,15 @@
 
 .table_container table {
     width: 95%;
-    color: rgb(174, 174, 174);
+    color: rgb(199, 199, 199);
 }
 
-.table_container table, .table_container th, .table_container td {
-    border: 1px solid silver;
+.table_container th {
+    background-color: #155799;
+    padding: 4px;
+}
+
+.table_container td {
+    background-color: #159957;
+    padding: 4px;
 }
