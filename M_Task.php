@@ -52,7 +52,7 @@
                     }
                 ?>
                 <div class="form_box">
-                    <form action="regTask.php" method="post"> 
+                    <form action="M_regTask.php" method="post"> 
                         <table align="center" class="input_box">
                             <tr>
                                 <td align="center" colspan="2"><h1>Task Register</h1></td>
