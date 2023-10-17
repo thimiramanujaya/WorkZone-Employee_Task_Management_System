@@ -40,7 +40,7 @@
     <body>
         <div class="page_container">
             <div class="sidebar_container">
-                <a href="Supervisor_Dashboard.html">
+                <a href="Supervisor_Dashboard.php">
                     <div class="logo_container">
                         <img src="res/logo.jpg"/>
                         <h1>WorkZone</h1>
