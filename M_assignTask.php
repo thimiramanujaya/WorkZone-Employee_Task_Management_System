@@ -11,7 +11,7 @@
 	// create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-	$sql = "INSERT INTO taskactivites(activityid, tid, activity) SELECT temp_activityid, temp_tid, temp_activity FROM temp_taskactivites";
+	$sql = "INSERT INTO taskactivites(activityid, tid, tname, activity) SELECT temp_activityid, temp_tid, temp_tname, temp_activity FROM temp_taskactivites";
 
     	if(mysqli_query($conn, $sql)) {
             $_SESSION['message'] = "New Activities Recordeded Successfully";
