@@ -22,7 +22,7 @@
 	$sql = "INSERT INTO Task VALUES ('$tid', '$tname', '$strdate', '$enddate', '$tnature')";
 
     if(mysqli_query($conn, $sql)) {
-		$_SESSION['message'] = "New Task Registered sucessfully";
+		$_SESSION['message'] = "New Task Registered Successfully";
         header('Location: M_Activity.php');	
 	}
 	else {
