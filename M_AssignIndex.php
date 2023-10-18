@@ -35,6 +35,8 @@
 
 <!DOCTYPE html>
 
+<?php session_start(); ?>
+
 <html lang="en">
 
     <head>
@@ -44,6 +46,12 @@
         <link text="stylesheet" rel="stylesheet" href="form-style.css">
         <link text="stylesheet" rel="stylesheet" href="dashboard-style.css">
     </head>
+
+	<script>
+        function closeAlert() {
+            document.getElementById('alert').style.display = 'none';
+        }
+    </script>
     
     <body>
         <div class="page_container">
@@ -66,8 +74,20 @@
             </div>
 
             <div class="form_container">
+				<?php 
+                    if(isset($_SESSION['message'])) {
+                ?>
+                        <div class="index_alert_box" id="alert">
+                            <h4><?= $_SESSION['message']; ?></h4>
+                            <button type="button"><img src="res/close_icon.png" width="20px" height="20px" onclick="closeAlert()"/></button>
+                        </div>
+
+                <?php
+                        unset($_SESSION['message']);
+                    }
+                ?>
 			    <div class="form_box">
-				    <form action="Assign.php" method="post"> 
+				    <form action="M_Assign.php" method="post"> 
 					    <table align="center"class="input_box">
 						    <tr>
 							    <td align="center" colspan="2"><h1>Assign Task</h1></td>
