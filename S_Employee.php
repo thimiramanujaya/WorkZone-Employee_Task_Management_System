@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php session_start(); ?>
+
 <html lang="en">
 
 	<head>
@@ -9,6 +11,12 @@
         <link text="stylesheet" rel="stylesheet" href="form-style.css">
         <link text="stylesheet" rel="stylesheet" href="dashboard-style.css">
 	</head>
+
+    <script>
+        function closeAlert() {
+            document.getElementById('alert').style.display = 'none';
+        }
+    </script>
 	
 	<body>
 		
@@ -22,7 +30,7 @@
                 </a>
                 <div class="optionlist_container">
                     <span>Preferences</span>
-                    <a href="S_Employee.html">Register New Employee</a>
+                    <a href="S_Employee.php">Register New Employee</a>
                     <a href="S_Activity.php">Insert New Activity</a>
                     <a href="S_AssignIndex.php">Assign New Task to Employee</a>
                     <a href="S_Report.php">Show Detailed Report</a>
@@ -31,8 +39,20 @@
             </div>
 
             <div class="form_container">
+                <?php 
+                    if(isset($_SESSION['message'])) {
+                ?>
+                        <div class="index_alert_box" id="alert">
+                            <h4><?= $_SESSION['message']; ?></h4>
+                            <button type="button"><img src="res/close_icon.png" width="20px" height="20px" onclick="closeAlert()"/></button>
+                        </div>
+
+                <?php
+                        unset($_SESSION['message']);
+                    }
+                ?>
                 <div class="form_box">
-                    <form action="empReg.php" method="post"> 
+                    <form action="S_empReg.php" method="post"> 
                         <table align="center" class="input_box">
                             <tr>
                                 <td align="center" colspan="2"><h1>Employee</h1></td>
