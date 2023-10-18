@@ -21,21 +21,21 @@
 	
 	if(mysqli_query($conn, $sql)) {
 		echo "New Employee Registered sucessfully";
-		echo "<a href='Employee.html' style='text-decoration: none; 
+		echo "<a href='E_Employee.html' style='text-decoration: none; 
 										 background: linear-gradient(135deg, #155799, #159957 );
 										 border-radius: 3px;
 										 cursor: pointer;
 										 margin: 5px;
 										 padding: 5px;
 										 color: azure;'>Register another Employee &#8594</a>";
-		echo "<a href='Task.html' style='text-decoration: none; 
+		echo "<a href='E_Report.php' style='text-decoration: none; 
 										 background: linear-gradient(135deg, #155799, #159957 );
 										 border-radius: 3px;
 										 cursor: pointer;
 										 margin: 5px;
 										 padding: 5px;
 										 color: azure;'>Next &#8594</a>";
-		echo "<a href='Home.html' style='text-decoration: none; 
+		echo "<a href='Employee_Dashboard.php' style='text-decoration: none; 
 										 background: linear-gradient(135deg, #155799, #159957 );
 										 border-radius: 3px;
 										 cursor: pointer;
