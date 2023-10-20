@@ -7,29 +7,34 @@
 
 	$conn = mysqli_connect($hostname, $username, $password, $dbname);
 
-	$query = "SELECT tid FROM Task";
+	$query = "SELECT tname FROM Task";
 	$result_set = mysqli_query($conn, $query);
 
 	$options = "";
 	while ($result = mysqli_fetch_array($result_set)) {
-		$options = $options."<option>{$result['tid']}</option>";    //$options .= "<option>{$result['tid']}</option>"
+		$options = $options."<option>{$result['tname']}</option>";    //$options .= "<option>{$result['tid']}</option>"
 	}
 
 	//$row = "";
 	$record = "";
 	if(isset($_GET["insert_activity"])) {
-		$tid = $_GET['tid_list'];
+		$tname = $_GET['tid_list'];
 		$activityid = $_GET['activity_id'];
 		$activity = $_GET['activity_name'];
 
-		$sql = "INSERT INTO temp_taskactivites VALUES ('$activityid', '$tid', '$activity')";
+		$tid_query = "SELECT tid FROM task WHERE tname='$tname'";
+		$tid_result_array = mysqli_query($conn, $tid_query);
+		$tid_result = mysqli_fetch_array($tid_result_array);
+		$tid = $tid_result['tid'];
+
+		$sql = "INSERT INTO temp_taskactivites VALUES ('$activityid', '$tid', '$tname', '$activity')";
 		if(mysqli_query($conn, $sql)) {
 			$query_record = "SELECT * FROM temp_taskactivites";
 			$result_set2 = mysqli_query($conn, $query_record);
 
 			if(mysqli_num_rows($result_set2) > 0) {
 				while($result2 = mysqli_fetch_array($result_set2)) {
-					$record = $record."<tr> <td>{$result2['temp_tid']}</td> <td>{$result2['temp_activityid']}</td> <td>{$result2['temp_activity']}</td> </tr>";
+					$record = $record."<tr> <td>{$result2['temp_tname']}</td> <td>{$result2['temp_activityid']}</td> <td>{$result2['temp_activity']}</td> </tr>";
 				}
 			}
 
@@ -138,7 +143,7 @@
 							    <td align="center" colspan="3"><h1>Insert Activity</h1></td>
 						    </tr>
 						    <tr>	
-    							<td>Task Id</td>
+    							<td>Task Name</td>
 	    						<td>
 								    <select name="tid_list" id="tidList">
 									    <?php echo $options; ?>
@@ -164,7 +169,7 @@
     				<form action="S_assignTask.php" method="post">
 					    <table id="displayTable" align="center" class="input_box">
     						<tr>
-							    <th>Task Id</th>
+							    <th>Task Name</th>
 							    <th>Activity Id</th>
 							    <th>Activity</th>
             
