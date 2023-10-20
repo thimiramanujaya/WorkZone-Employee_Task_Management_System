@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 
-<?php session_start(); ?>
+<?php session_start(); 
+
+    $greeting = "";
+    $datetime = new DateTime('now', new DateTimeZone('Asia/Kolkata'));
+    $date = $datetime->format('H');
+    if($date < 12) {
+        $greeting = $greeting."<h4>Good Morning !</h4>";
+    }
+    else if ($date < 15) {
+        $greeting = $greeting."<h4>Good Afternoon !</h4>";
+    }
+    else if ($date < 19) {
+        $greeting = $greeting."<h4>Good Evening !</h4>";
+    }
+    else {
+        $greeting = $greeting."<h4>Good Night !</h4>";
+    }
+?>
 
 <html lang="en">
 
@@ -51,7 +68,7 @@
                 ?>
                 <div class="header_container">
                     <div class="greeting_container">
-                        <h4>Good Evening</h4>
+                        <?php echo $greeting; ?>
                         <h1>Welcome <?= $_SESSION['username'] ?></h1>
                     </div>
                     <div class="accountlogo_container">
