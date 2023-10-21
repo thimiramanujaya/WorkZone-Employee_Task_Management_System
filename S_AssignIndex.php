@@ -7,28 +7,28 @@
 
 	$conn = mysqli_connect($hostname, $username, $password, $dbname);
 
-	$query1 = "SELECT eid FROM Employee";
+	$query1 = "SELECT name FROM Employee";
 	$result_set1 = mysqli_query($conn, $query1);
 
-	$query2 = "SELECT tid FROM task";
+	$query2 = "SELECT tname FROM task";
 	$result_set2 = mysqli_query($conn, $query2);
 
-	$query3 = "SELECT activityid FROM taskactivites";
+	$query3 = "SELECT activity FROM taskactivites";
 	$result_set3 = mysqli_query($conn, $query3);
 
 	$option1 = "";
 	while ($result1 = mysqli_fetch_array($result_set1)) {
-		$option1 = $option1."<option>{$result1['eid']}</option>";    
+		$option1 = $option1."<option>{$result1['name']}</option>";    
 	}
 
 	$option2 = "";
 	while ($result2 = mysqli_fetch_array($result_set2)) {
-		$option2 = $option2."<option>{$result2['tid']}</option>";   
+		$option2 = $option2."<option>{$result2['tname']}</option>";   
 	}
 
 	$option3 = "";
 	while ($result3 = mysqli_fetch_array($result_set3)) {
-		$option3 = $option3."<option>{$result3['activityid']}</option>";   
+		$option3 = $option3."<option>{$result3['activity']}</option>";   
 	}
 
 ?>
@@ -92,23 +92,23 @@
 							    <td align="center" colspan="2"><h1>Assign Task</h1></td>
 						    </tr>
 						    <tr>
-							    <td>Employee Id</td>
+							    <td>Employee Name</td>
 							    <td>
-                        		    <select name="eid_list" id="eidList">
+                        		    <select name="ename_list" id="eidList">
 									    <?php echo $option1; ?>
 								    </select>
                     		    </td>
 						    </tr>
 						    <tr>
-    							<td>Task Id</td>
+    							<td>Task Name</td>
 	    						<td>
-	                        	    <select name="tid_list" id="tidList">
+	                        	    <select name="tname_list" id="tidList">
 									    <?php echo $option2; ?>
 								    </select>
                     		    </td>
 						    </tr>
 						    <tr>
-    							<td>Activity Id</td>
+    							<td>Activity </td>
 		    					<td>
                             		<select name="activity_list" id="activityList">
 				    					<?php echo $option3; ?>
