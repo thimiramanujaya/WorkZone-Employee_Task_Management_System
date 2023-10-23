@@ -18,7 +18,7 @@
 	//$row = "";
 	$record = "";
 	if(isset($_GET["insert_activity"])) {
-		$tname = $_GET['tid_list'];
+		$tname = $_GET['tname_list'];
 		$activityid = $_GET['activity_id'];
 		$activity = $_GET['activity_name'];
 
@@ -145,7 +145,7 @@
 						    <tr>	
     							<td>Task Name</td>
 	    						<td>
-								    <select name="tid_list" id="tidList">
+								    <select name="tname_list" id="tidList">
 									    <?php echo $options; ?>
 								    </select>
 							    </td>
@@ -178,8 +178,9 @@
 						    	<?php echo $record; ?>
 						    <tr class ="btn_row">
     							<td align="center" colspan="3">
-	    							<!--<input type="button" value="Delete Record" onclick="removeRow()">-->
-								    <input type="submit" value="Save to DB" name="submit" class="button_box"/>
+									<input type="button" value="Clear Table" name="clear" onclick="removeRow()" class="clear_button_box">
+									
+								    <input type="submit" value="Save to Database" name="submit" class="button_box"/>
 							    </td>
 						    </tr>
 					    </table>
