@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 
-<?php session_start(); 
+<?php session_start();
+
+    $hostname = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "project";
+
+	$conn = mysqli_connect($hostname, $username, $password, $dbname);
+
+    $record = "";
+    $query = "SELECT Employee.eid, Employee.name, Task.tname, taskactivites.activity, assign.dateassign 
+              FROM Employee, Task, taskactivites, assign
+              WHERE Employee.eid = assign.eid AND Task.tid = assign.tid AND taskactivites.activityid = assign.activityid";
+
+	$query_result = mysqli_query($conn, $query);
+
+	if(mysqli_num_rows($query_result) > 0) {
+		while($result = mysqli_fetch_array($query_result)) {
+			$record = $record."<tr> <td>{$result['eid']}</td> <td>{$result['name']}</td> <td>{$result['tname']}</td> 
+            <td>{$result['activity']}</td> <td>{$result['dateassign']}</td> </tr>";
+		}
+	}
+    else {
+        $record = $record."<tr> <td colspan=5 align='center'> No sufficient data to display an overview </td> </tr>" ;
+    }
 
     $greeting = "";
     $datetime = new DateTime('now', new DateTimeZone('Asia/Kolkata'));
@@ -88,7 +112,7 @@
                             <th>Activity</th>
                             <th>Date Assigned</th>
                         </tr>
-                        
+                        <?php echo $record; ?>
                     </table>
                 </div>
 

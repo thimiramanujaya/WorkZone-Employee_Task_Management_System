@@ -206,7 +206,7 @@
 }
 
 .table_container {
-    border: 1px solid skyblue;
+    /*border: 1px solid skyblue;*/
     padding: 20px;
     padding-bottom: 30px;
     width: 80%;
@@ -220,15 +220,22 @@
 
 .table_container table {
     width: 95%;
-    color: rgb(199, 199, 199);
+    color: rgba(174, 174, 174, 0.9);
 }
 
 .table_container th {
-    background-color: #155799;
+    background-color: rgba(14, 17, 19, 0.7);
     padding: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .table_container td {
-    background-color: #159957;
+    background-color: rgba(22, 24, 26, 0.5);
     padding: 4px;
+}
+
+.table_container table, .table_container th, .table_container td {
+    border: 1px solid cyan;
+    border-collapse: collapse;
 }
