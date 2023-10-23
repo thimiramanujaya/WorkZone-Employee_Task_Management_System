@@ -23,7 +23,7 @@
 	$primary_key_result = mysqli_query($conn, $check_primary_key);
 
 	if(mysqli_num_rows($primary_key_result) > 0) {
-		$_SESSION['message'] = "This employee has been already Registered This employee has been already Registered This employee has been already Registered<br/>Please try again";
+		$_SESSION['message'] = "This employee has been already Registered<br/>Please try again";
 		header('Location: M_Employee.php');
 				
 	}

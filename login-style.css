@@ -11,12 +11,10 @@ body {
 .alert_box {
     position: absolute;
     top: 10px;
-    margin: auto;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    align-self: center;
     z-index: 2;
     color: azure;
     background: linear-gradient(to top, #240b36d0, #c31431d0);
