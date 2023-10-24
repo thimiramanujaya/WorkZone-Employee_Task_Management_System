@@ -1,5 +1,8 @@
 
 <?php
+
+    session_start();
+
 	$hostname = "localhost";
 	$username = "root";
 	$password = "";
@@ -9,27 +12,49 @@
 
     $record = "";
     if(isset($_GET['gen_report'])) {
-        $query = "SELECT eid, name, tname, activity, dateassign 
-                  FROM Employee, Task, taskactivites, assign";
 
-		$query_result = mysqli_query($conn, $query);
+        $eid = $_GET['emp_id'];
+        if($eid != "") {
+            $query = "SELECT Employee.eid, Employee.name, Employee.designation, Task.tname, Task.start_date, Task.end_date, taskactivites.activity, assign.dateassign, assign.remarks
+            FROM Employee, Task, taskactivites, assign
+            WHERE Employee.eid='$eid' AND Employee.eid = assign.eid AND Task.tid = assign.tid AND taskactivites.activityid = assign.activityid";
 
-		if(mysqli_num_rows($query_result) > 0) {
-			while($result = mysqli_fetch_array($query_result)) {
-				$record = $record."<tr> <td>{$result['eid']}</td> <td>{$result['name']}</td> <td>{$result['tname']}</td> 
-                <td>{$result['activity']}</td> <td>{$result['dateassign']}</td> </tr>";
-			}
-		}
-        else {
-            echo '<script>alert("Error: No Sufficient data to create Record")</script>';
+            $query_result = mysqli_query($conn, $query);
+
+            if(mysqli_num_rows($query_result) > 0) {
+                while($result = mysqli_fetch_array($query_result)) {
+                  $record = $record."<tr> <td>{$result['eid']}</td> <td>{$result['name']}</td> <td>{$result['designation']}</td> <td>{$result['tname']}</td> 
+                  <td>{$result['start_date']}</td> <td>{$result['end_date']}</td> <td>{$result['activity']}</td> <td>{$result['dateassign']}</td> <td>{$result['remarks']}</td> </tr>";
+                }
+              }
+            else {
+                $_SESSION['message'] = "Error: No sufficient data to create Record";
+            }
         }
+        else {
+            $query = "SELECT Employee.eid, Employee.name, Employee.designation, Task.tname, Task.start_date, Task.end_date, taskactivites.activity, assign.dateassign, assign.remarks
+            FROM Employee, Task, taskactivites, assign
+            WHERE Employee.eid = assign.eid AND Task.tid = assign.tid AND taskactivites.activityid = assign.activityid";
+
+		    $query_result = mysqli_query($conn, $query);
+
+		    if(mysqli_num_rows($query_result) > 0) {
+			    while($result = mysqli_fetch_array($query_result)) {
+				    $record = $record."<tr> <td>{$result['eid']}</td> <td>{$result['name']}</td> <td>{$result['designation']}</td> <td>{$result['tname']}</td> 
+                    <td>{$result['start_date']}</td> <td>{$result['end_date']}</td> <td>{$result['activity']}</td> <td>{$result['dateassign']}</td> <td>{$result['remarks']}</td> </tr>";
+			    }
+		    }
+            else {
+                $_SESSION['message'] = "Error: No sufficient data to create Record";
+            }
+        }
+        
     }
 
 
 ?>
 <!DOCTYPE html>
 
-<?php session_start(); ?>
 
 <html lang="en">
     <head>
@@ -82,6 +107,10 @@
                 <div class="report_container">
                     <h1>Report</h1>
                     <form method="get">
+                    <div class="eid_box input_box">
+                        <label for="eid">Employee id</label>
+                        <input type="text" id="eid" name="emp_id"/>
+                    </div>
                         <input type="submit" value="Generate New Report" name="gen_report" class="button_box" />
                     </form>
 
@@ -89,9 +118,13 @@
                         <tr>
                             <th>Employee Id</th>
                             <th>Employee Name</th>
+                            <th>Employee Designation</th>
                             <th>Task Assigned</th>
+                            <th>Task Start Date</th>
+                            <th>Task End Date</th>
                             <th>Activity</th>
                             <th>Date Assigned</th>
+                            <th>Remarks</th>
                         </tr>
                         <?php echo $record; ?>
                     </table>

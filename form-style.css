@@ -202,7 +202,6 @@
 	backdrop-filter: blur(20px);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	padding: 20px;
-	padding-right: 0;
 	border-radius: 15px;
 	color: rgb(182, 182, 182);
 	flex-direction: column;
@@ -214,7 +213,7 @@
 }
 
 .report_container {
-	width: 80%;
+	width: 95%;
 }
 
 .report_container h1 {
@@ -224,6 +223,23 @@
 .report_container input {
 	width: 25%;
 	margin-bottom: 10px;
+}
+
+.report_container table, .report_container th, .report_container td {
+	border: 1px solid cyan;
+    border-collapse: collapse;
+}
+
+.report_container th {
+	background-color: rgba(14, 17, 19, 0.7);
+}
+
+.report_container td {
+	background-color: rgba(22, 24, 26, 0.6);
+	font-size: 12px;
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 .input_box input {
@@ -264,14 +280,20 @@ form td, th {
 	border-collapse: collapse;
 }
 
+#displayTable, #displayTable th, #displayTable td {
+	border: 1px solid cyan;
+    border-collapse: collapse;
+}
+
 #displayTable th {
-	background: #159957;
+	background-color: rgba(14, 17, 19, 0.7);
 	text-align: center;
 	color: azure;
 }
 
 #displayTable td {
 	text-align: center;
+	background-color: rgba(22, 24, 26, 0.6);
 }
 
 select {
@@ -281,4 +303,13 @@ select {
 	background: rgb(182, 182, 182);
 	font-size: medium;
 	padding: 2px;
+}
+
+.eid_box {
+	margin-bottom: 10px;
+}
+
+.eid_box input {
+	margin-left: 8px;
+	width: 20%;
 }

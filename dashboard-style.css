@@ -233,6 +233,7 @@
 .table_container td {
     background-color: rgba(22, 24, 26, 0.5);
     padding: 4px;
+    text-align: center;
 }
 
 .table_container table, .table_container th, .table_container td {
