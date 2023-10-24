@@ -221,7 +221,7 @@
 }
 
 .report_container input {
-	width: 25%;
+	
 	margin-bottom: 10px;
 }
 
@@ -313,3 +313,9 @@ select {
 	margin-left: 8px;
 	width: 20%;
 }
+
+#E_eid {
+	margin-left: 8px;
+	width: 10%;
+}
+
