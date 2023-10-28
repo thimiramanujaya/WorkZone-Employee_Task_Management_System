@@ -63,7 +63,7 @@
                             </tr>
                             <tr>
                                 <td>2. Telephone</td>
-                                <td><input type="tel" id="tel" name="telephone"></td>
+                                <td><input type="number" id="tel" name="telephone"></td>
                             </tr>
                             <tr>
                                 <td>3. Name</td>
