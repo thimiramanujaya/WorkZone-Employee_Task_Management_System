@@ -125,7 +125,10 @@
 							    <td><input type="text" id="remarks" name="remarks" required></td>
 						    </tr>
 						    <tr>
-    							<td align="center" colspan="2"><input type="submit" name="submit" value="SUBMIT" class="button_box"></td>
+    							<td align="center" colspan="2">
+									<input type="reset" name="reset" value="RESET" class="clear_button_box">
+									<input type="submit" name="submit" value="SUBMIT" class="button_box">
+								</td>
 						    </tr>
 					    </table>
 				    </form>
