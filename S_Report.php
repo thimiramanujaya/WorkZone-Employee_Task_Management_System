@@ -13,7 +13,7 @@
     $record = "";
     if(isset($_GET['gen_report'])) {
 
-        $eid = $_GET['emp_id'];
+        $eid = mysqli_real_escape_string($conn, $_GET['emp_id']);
         if($eid != "") {
             $query = "SELECT Employee.eid, Employee.name, Employee.designation, Task.tname, Task.start_date, Task.end_date, taskactivites.activity, assign.dateassign, assign.remarks
             FROM Employee, Task, taskactivites, assign
