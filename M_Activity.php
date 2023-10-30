@@ -23,9 +23,9 @@
 	//$row = "";
 	$record = "";
 	if(isset($_GET["insert_activity"])) {
-		$tname = $_GET['tname_list'];
-		$activityid = $_GET['activity_id'];
-		$activity = $_GET['activity_name'];
+		$tname = mysqli_real_escape_string($conn, $_GET['tname_list']);
+		$activityid = mysqli_real_escape_string($conn, $_GET['activity_id']);
+		$activity = mysqli_real_escape_string($conn, $_GET['activity_name']);
 
 		$tid_query = "SELECT tid FROM task WHERE tname='$tname'";
 		$tid_result_array = mysqli_query($conn, $tid_query);

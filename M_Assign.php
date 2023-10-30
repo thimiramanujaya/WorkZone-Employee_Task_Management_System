@@ -7,16 +7,16 @@
 	$password = "";
 	$dbname = "project";
 	
-	$ename = $_POST['ename_list'];
-	$tname = $_POST['tname_list'];
-	$activity = $_POST['activity_list'];
-	$d_assign = $_POST['date_assign'];
-	$remark = $_POST['remarks'];
-	
-	
-	
 	// create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+	$ename = mysqli_real_escape_string($conn, $_POST['ename_list']);
+	$tname = mysqli_real_escape_string($conn, $_POST['tname_list']);
+	$activity = mysqli_real_escape_string($conn, $_POST['activity_list']);
+	$d_assign = mysqli_real_escape_string($conn, $_POST['date_assign']);
+	$remark = mysqli_real_escape_string($conn, $_POST['remarks']);
+	
+
 
 	$get_eid = "SELECT eid FROM Employee WHERE name='$ename'";
 	$eid_result_array = mysqli_query($conn, $get_eid);

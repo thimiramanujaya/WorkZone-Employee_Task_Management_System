@@ -6,17 +6,16 @@
 	$username = "root";
 	$password = "";
 	$dbname = "project";
-	
-	$tid = $_POST['task_id'];
-	$tname = $_POST['task_name'];
-	$strdate = $_POST['start_date'];
-	$enddate = $_POST['end_date'];
-	$tnature = $_POST['task_nature'];
-	
-	
-	
+
 	// create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	
+	$tid = mysqli_real_escape_string($conn, $_POST['task_id']);
+	$tname = mysqli_real_escape_string($conn, $_POST['task_name']);
+	$strdate = mysqli_real_escape_string($conn, $_POST['start_date']);
+	$enddate = mysqli_real_escape_string($conn, $_POST['end_date']);
+	$tnature = mysqli_real_escape_string($conn, $_POST['task_nature']);
+	
 
 	$check_primary_key = "SELECT tid FROM Task WHERE tid='$tid' OR tname='$tname'";
 	$primary_key_result = mysqli_query($conn, $check_primary_key);
