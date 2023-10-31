@@ -204,10 +204,13 @@
 						if(isset($_GET['clear'])) {
 							//echo "<script>if(confirm('Do you really want to clear table?') == true){alert('Table Cleared!');} else{alert('Cancelled');}</script>";
 							$empty_table_query = "TRUNCATE TABLE temp_taskactivites";
-            				mysqli_query($conn, $empty_table_query);	
-							exit();
-							$_SESSION['message'] = "Table Cleared";
-							header('Location: M_Activity.php');
+            				$result = mysqli_query($conn, $empty_table_query);	
+							//exit();
+							if($result) {
+								$_SESSION['message'] = "Table Cleared";
+							}
+							
+							//header('Location: M_Activity.php');
 						}
 					?>
 					<form method="get">

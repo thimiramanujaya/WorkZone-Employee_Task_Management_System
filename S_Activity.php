@@ -201,7 +201,9 @@
 							$empty_table_query = "TRUNCATE TABLE temp_taskactivites";
             				mysqli_query($conn, $empty_table_query);	
 							//exit();
-							$_SESSION['message'] = "Table Cleared";
+							if($result) {
+								$_SESSION['message'] = "Table Cleared";
+							}
 							//header('Location: S_Activity.php');
 						}
 					?>
