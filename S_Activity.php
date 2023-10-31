@@ -1,4 +1,7 @@
 <?php
+
+	session_start();
+
 	$hostname = "localhost";
 	$username = "root";
 	$password = "";
@@ -52,7 +55,6 @@
 
 <!DOCTYPE html>
 
-<?php session_start(); ?>
 
 <html lang="en">
 
@@ -97,6 +99,16 @@
 			}  
 		
 		</script> -->
+
+		<script type="text/javascript">
+			function clearTable() {
+				var rowCount = displayTable.rows.length;
+				for(var i= rowCount-2; i>0; i--) {
+					displayTable.deleteRow(i);
+				}
+			}
+		</script>
+
     </head>
 
 	<script>
@@ -178,13 +190,24 @@
 						    	<?php echo $record; ?>
 						    <tr class ="btn_row">
     							<td align="center" colspan="3">
-									<input type="button" value="Clear Table" name="clear" onclick="removeRow()" class="clear_button_box">
-									
 								    <input type="submit" value="Save to Database" name="submit" class="button_box"/>
 							    </td>
 						    </tr>
 					    </table>
 				    </form>
+					<?php 
+						if(isset($_GET['clear'])) {
+							//echo "<script>if(confirm('Do you really want to clear table?') == true){alert('Table Cleared!');} else{alert('Cancelled');}</script>";
+							$empty_table_query = "TRUNCATE TABLE temp_taskactivites";
+            				mysqli_query($conn, $empty_table_query);	
+							//exit();
+							$_SESSION['message'] = "Table Cleared";
+							//header('Location: S_Activity.php');
+						}
+					?>
+					<form method="get">
+						<input type="submit" value="Clear Table" name="clear" onclick="clearTable()" class="clear_button_box">
+					</form>
 			    </div>
 		    </div>
         </div>
