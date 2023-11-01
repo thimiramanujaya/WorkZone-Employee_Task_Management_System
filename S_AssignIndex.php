@@ -51,6 +51,17 @@
         function closeAlert() {
             document.getElementById('alert').style.display = 'none';
         }
+		    
+        var opt_link = document.getElementsByClassName("opt_link");
+        currentVal = 1;
+
+        function activeOption() {
+            for(p of opt_link) {
+                p.classList.remove("active_option");
+            }
+            event.target.classList.add("active_option");
+            currentVal = event.target.value;
+        }
     </script>
     
     <body>
@@ -64,11 +75,11 @@
                 </a>
                 <div class="optionlist_container">
                     <span>Preferences</span>
-                    <a href="S_Employee.php">Register New Employee</a>
-                    <a href="S_Activity.php">Insert New Activity</a>
-                    <a href="S_AssignIndex.php">Assign New Task to Employee</a>
-                    <a href="S_Report.php">Show Detailed Report</a>
-					<a href="Logout.php">Logout</a>
+                    <a href="S_Employee.php" class="opt_link" value="1" onclick="activeOption()">Register New Employee</a>
+                    <a href="S_Activity.php" class="opt_link" value="2" onclick="activeOption()">Insert New Activity</a>
+                    <a href="S_AssignIndex.php" class="opt_link active_option" value="3" onclick="activeOption()">Assign New Task to Employee</a>
+                    <a href="S_Report.php" class="opt_link" value="4" onclick="activeOption()">Show Detailed Report</a>
+                    <a href="Logout.php" class="opt_link" value="5" onclick="activeOption()">Logout</a>
                 </div>
             </div>
 
