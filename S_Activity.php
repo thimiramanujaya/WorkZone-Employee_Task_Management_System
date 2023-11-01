@@ -46,9 +46,14 @@
 			echo "Error:".$sql."<br/>".mysqli_error($conn); 
 		}
 
-
 		/*$row = $row."<tr> <td>{$tid}</td> <td>{$activityid}</td> <td>{$activity}</td </tr>";*/
+	}
 
+	if(isset($_GET['clear'])) {
+		//echo "<script>if(confirm('Do you really want to clear table?') == true){alert('Table Cleared!');} else{alert('Cancelled');}</script>";
+		$empty_table_query = "TRUNCATE TABLE temp_taskactivites";
+		$result = mysqli_query($conn, $empty_table_query);	
+		$_SESSION['message'] = "Table Cleared";
 	}
 
 ?>
@@ -195,18 +200,6 @@
 						    </tr>
 					    </table>
 				    </form>
-					<?php 
-						if(isset($_GET['clear'])) {
-							//echo "<script>if(confirm('Do you really want to clear table?') == true){alert('Table Cleared!');} else{alert('Cancelled');}</script>";
-							$empty_table_query = "TRUNCATE TABLE temp_taskactivites";
-            				mysqli_query($conn, $empty_table_query);	
-							//exit();
-							if($result) {
-								$_SESSION['message'] = "Table Cleared";
-							}
-							//header('Location: S_Activity.php');
-						}
-					?>
 					<form method="get">
 						<input type="submit" value="Clear Table" name="clear" onclick="clearTable()" class="clear_button_box">
 					</form>

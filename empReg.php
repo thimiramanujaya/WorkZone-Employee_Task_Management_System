@@ -4,17 +4,15 @@
 	$username = "root";
 	$password = "";
 	$dbname = "project";
-	
-	$eid = $_POST['eid'];
-	$tele = $_POST['telephone'];
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$design = $_POST['designation'];
-	
-	
-	
+
 	// create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	
+	$eid = mysqli_real_escape_string($conn, $_POST['eid']);
+	$tele = mysqli_real_escape_string($conn, $_POST['telephone']);
+	$name = mysqli_real_escape_string($conn, $_POST['name']);
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$design = mysqli_real_escape_string($conn, $_POST['designation']);
 	
 	
 	$sql = "INSERT INTO Employee VALUES ('$eid', '$tele', '$name', '$email', '$design')";
