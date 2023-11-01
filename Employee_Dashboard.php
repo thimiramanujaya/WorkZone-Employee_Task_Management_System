@@ -39,7 +39,9 @@
                 </a>
                 <h3>Welcome <?= $_SESSION['username'] ?></h3>
                 <div class="accountlogo_container">
-                        <img src="res/user-icon.png"/>
+                    <a href="#">
+                        <img src="res/user-icon.png" alt="user-logo"/>
+                    </a>
                 </div>
             </div>
             <div class="box_container">

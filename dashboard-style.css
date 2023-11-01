@@ -167,15 +167,24 @@
 }
 
 .accountlogo_container {
+    /*border: 1px solid red;*/
     width: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*border: 1px solid red;*/
+}
+
+.accountlogo_container a {
+    /*border: 1px solid aqua;*/
+    width: 50%;
+    border-radius: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .accountlogo_container img {
-    width: 50%;
+    width: 100%;
     border-radius: 50%;
     border: 1px solid salmon;
     filter: invert(100%);
