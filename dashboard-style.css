@@ -125,6 +125,12 @@
     color: rgb(86, 86, 86);
 }
 
+.active_option {
+    background: linear-gradient(135deg, rgba(24, 39, 231, 0.8), rgba(130, 1, 185, 0.8) ) !important;
+    /*background: linear-gradient(-135deg, rgb(51, 236, 236), rgb(24, 39, 231) ) !important;*/
+    color: aliceblue !important;
+}
+
 .dashview_container {
     width: 75%;
     display: flex;

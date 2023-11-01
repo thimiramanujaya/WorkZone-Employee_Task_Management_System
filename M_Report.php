@@ -69,6 +69,17 @@
         function closeAlert() {
             document.getElementById('alert').style.display = 'none';
         }
+
+        var opt_link = document.getElementsByClassName("opt_link");
+        currentVal = 1;
+
+        function activeOption() {
+            for(p of opt_link) {
+                p.classList.remove("active_option");
+            }
+            event.target.classList.add("active_option");
+            currentVal = event.target.value;
+        }
     </script>
 
     <body>
@@ -82,12 +93,12 @@
                 </a>
                 <div class="optionlist_container">
                     <span>Preferences</span>
-                    <a href="M_Employee.php">Register New Employee</a>
-                    <a href="M_Task.php">Insert New Task</a>
-                    <a href="M_Activity.php">Insert New Activity</a>
-                    <a href="M_AssignIndex.php">Assign New Task to Employee</a>
-                    <a href="M_Report.php">Show Detailed Report</a>
-                    <a href="Logout.php">Logout</a>
+                    <a href="M_Employee.php" class="opt_link" value="1" onclick="activeOption()">Register New Employee</a>
+                    <a href="M_Task.php" class="opt_link" value="2" onclick="activeOption()">Insert New Task</a>
+                    <a href="M_Activity.php" class="opt_link" value="3" onclick="activeOption()">Insert New Activity</a>
+                    <a href="M_AssignIndex.php" class="opt_link" value="4" onclick="activeOption()">Assign New Task to Employee</a>
+                    <a href="M_Report.php" class="opt_link active_option" value="5" onclick="activeOption()">Show Detailed Report</a>
+                    <a href="Logout.php" class="opt_link" value="6" onclick="activeOption()">Logout</a>
                 </div>
             </div>
 
