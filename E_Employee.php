@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php session_start(); ?>
+
 <html lang="en">
 
 	<head>
@@ -8,10 +10,28 @@
 		<title>Employee</title>
 		<link text="stylesheet" rel="stylesheet" href="form-style.css">
 	</head>
+
+	<script>
+        function closeAlert() {
+            document.getElementById('alert').style.display = 'none';
+        }
+    </script>
 	
 	<body>
 		
 		<div class="e_form_container">
+			<?php 
+                    if(isset($_SESSION['message'])) {
+                ?>
+                        <div class="index_alert_box" id="alert">
+                            <h4><?= $_SESSION['message']; ?></h4>
+                            <button type="button"><img src="res/close_icon.png" width="20px" height="20px" onclick="closeAlert()"/></button>
+                        </div>
+
+                <?php
+                        unset($_SESSION['message']);
+                    }
+            ?>
 			<a href="Employee_Dashboard.php"><img src="res/back_arrow.png" width="32px" height="32px"/> Back to Dashboard</a>
 			<div class="e_form_box">
 				<form action="empReg.php" method="post"> 
