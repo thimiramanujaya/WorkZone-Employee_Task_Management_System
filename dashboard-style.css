@@ -40,12 +40,12 @@
     width: 100%;
     display: flex;
     min-height: 100vh;
-
     /*border: 3px solid black;*/
 }
 
 .sidebar_container {
     width: 25%;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     background-color: rgb(14, 17, 19);
@@ -82,7 +82,7 @@
     width: 70%;
     margin: 3px;
     padding-left: 8px;
-    font-size: 30px;
+    font-size: 2.5vw;
     color: rgb(206, 206, 206);
     /*border: 1px solid red;*/
 }
@@ -93,7 +93,7 @@
     padding-right: 5px;
     padding-bottom: 3px;
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 1.18vw;
     border-bottom: 1px solid rgb(206, 206, 206);
 }
 
@@ -114,7 +114,7 @@
     margin: 4px;
     padding: 10px;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 1.1vw;
     text-decoration: none;
 	color: aliceblue;
 	background: linear-gradient(135deg, #155799, #159957 );
@@ -155,7 +155,7 @@
 
 .greeting_container h1 {
     width: 100%;
-    font-size: 26px;
+    font-size: 1.9vw;
     text-align: left;
     padding-left: 20px;
     color: rgb(174, 174, 174);
@@ -164,7 +164,7 @@
 
 .greeting_container h4 {
     width: 100%;
-    font-size: 14px;
+    font-size: 1vw;
     text-align: left;
     padding-left: 20px;
     color: rgb(174, 174, 174);
@@ -191,6 +191,7 @@
 
 .accountlogo_container img {
     width: 100%;
+    min-width: 30px;
     border-radius: 50%;
     border: 1px solid salmon;
     filter: invert(100%);
@@ -205,7 +206,7 @@
 
 .dashcontent_container h1 {
     width: 100%;
-    font-size: 26px;
+    font-size: 1.9vw;
     text-align: center;
     color: rgb(174, 174, 174);
     /*border: 1px solid beige;*/
@@ -213,7 +214,7 @@
 
 .dashcontent_container h3 {
     width: 100%;
-    font-size: 18px;
+    font-size: 1.34vw;
     text-align: center;
     color: grey;
     /*border: 1px solid beige;*/
@@ -236,6 +237,7 @@
 .table_container table {
     width: 95%;
     color: rgba(174, 174, 174, 0.9);
+    font-size: 1.1vw;
 }
 
 .table_container th {
@@ -254,4 +256,13 @@
 .table_container table, .table_container th, .table_container td {
     border: 1px solid cyan;
     border-collapse: collapse;
+}
+
+@media only screen and (max-width: 735px) {
+    .table_container{
+        overflow: scroll;
+        align-items: start;
+        justify-content: flex-start;
+        
+    }
 }
