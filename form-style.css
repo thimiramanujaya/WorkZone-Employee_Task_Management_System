@@ -94,7 +94,7 @@
 
 .container_home .box_container h1 {
 	padding-bottom: 30px;
-	font-size: 50px;
+	font-size: 3.66vw;
 }
 
 .e_dash_header{
@@ -112,8 +112,13 @@
 	color: rgb(182, 182, 182);
 }
 
+.e_dash_header h3{
+	font-size: 1.32vw;
+}
+
 .logo_container {
 	width: 30%;
+	min-width: 200px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -146,6 +151,10 @@
 	text-decoration: none;
 }
 
+.e_dash_header h1 {
+	font-size: 2.93vw !important;
+}
+
 .accountlogo_container {
     width: 10%;
     display: flex;
@@ -165,6 +174,7 @@
 
 .accountlogo_container img {
     width: 100%;
+	min-width: 28px;
 	border: 3px solid yellowgreen;
     border-radius: 50%;
 	filter: invert(80%);
@@ -172,6 +182,7 @@
 
 .box_container {
 	width: 60%;
+	min-width: 400px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -194,8 +205,10 @@
 	margin: 5px;
 	border-radius: 8px;
 	width: 50%;
-	font-size: 20px;
+	min-width: 200px;
+	font-size: 1.46vw;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-wrap: nowrap;
 }
 
 .box_container a:hover {
@@ -328,5 +341,13 @@ select {
 #E_eid {
 	margin-left: 8px;
 	width: 10%;
+}
+
+@media only screen and (max-width: 1050px) {
+    .report_container{
+        overflow: scroll;
+        align-items: start;
+        justify-content: flex-start;
+    }
 }
 
