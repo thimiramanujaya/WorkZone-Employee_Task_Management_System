@@ -8,13 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashboard-Employee</title>
         <link text="stylesheet" rel="stylesheet" href="form-style.css">
-    </head>
 
-    <script>
-        function closeAlert() {
-            document.getElementById('alert').style.display = 'none';
-        }
-    </script>
+        <script>
+            function closeAlert() {
+                document.getElementById('alert').style.display = 'none';
+            }
+        </script>
+    </head>
     
     <body>
         <div class="container_home">

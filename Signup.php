@@ -17,13 +17,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Signup-WorkZone</title>
         <link rel="stylesheet" href="login-style.css">
+        
+        <script>
+            function closeAlert() {
+                document.getElementById('alert').style.display = 'none';
+            }
+        </script>
     </head>
-
-    <script>
-        function closeAlert() {
-            document.getElementById('alert').style.display = 'none';
-        }
-    </script>
 
     <body>
         <div class="page_container">

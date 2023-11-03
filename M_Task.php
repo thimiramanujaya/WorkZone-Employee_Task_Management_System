@@ -10,24 +10,25 @@
         <title>Task Register</title>
         <link text="stylesheet" rel="stylesheet" href="form-style.css">
         <link text="stylesheet" rel="stylesheet" href="dashboard-style.css">
+        
+        <script>
+            function closeAlert() {
+                document.getElementById('alert').style.display = 'none';
+            }
+
+            var opt_link = document.getElementsByClassName("opt_link");
+            currentVal = 1;
+
+            function activeOption() {
+                for(p of opt_link) {
+                    p.classList.remove("active_option");
+                }
+                event.target.classList.add("active_option");
+                currentVal = event.target.value;
+            }
+        </script>
     </head>
 
-    <script>
-        function closeAlert() {
-            document.getElementById('alert').style.display = 'none';
-        }
-
-        var opt_link = document.getElementsByClassName("opt_link");
-        currentVal = 1;
-
-        function activeOption() {
-            for(p of opt_link) {
-                p.classList.remove("active_option");
-            }
-            event.target.classList.add("active_option");
-            currentVal = event.target.value;
-        }
-    </script>
     
     <body>
         <div class="page_container">
