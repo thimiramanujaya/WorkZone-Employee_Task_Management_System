@@ -32,23 +32,33 @@
 		$tid_result = mysqli_fetch_array($tid_result_array);
 		$tid = $tid_result['tid'];
 
-		
+		$check_activity = "SELECT * FROM taskactivites WHERE activityid='$activityid' OR activity='$activity'";
+		$result_activity = mysqli_query($conn, $check_activity);
+		$check_temp_activity = "SELECT * FROM temp_taskactivites WHERE temp_activityid='$activityid' OR temp_activity='$activity'";
+		$result_temp_activity = mysqli_query($conn, $check_temp_activity);
 
-		$sql = "INSERT INTO temp_taskactivites VALUES ('$activityid', '$tid', '$tname', '$activity')";
-		if(mysqli_query($conn, $sql)) {
-			$query_record = "SELECT * FROM temp_taskactivites";
-			$result_set2 = mysqli_query($conn, $query_record);
-
-			if(mysqli_num_rows($result_set2) > 0) {
-				while($result2 = mysqli_fetch_array($result_set2)) {
-					$record = $record."<tr> <td>{$result2['temp_tname']}</td> <td>{$result2['temp_activityid']}</td> <td>{$result2['temp_activity']}</td> </tr>";
-				}
-			}
-
+		if(mysqli_num_rows($result_activity) > 0 OR mysqli_num_rows($result_temp_activity) > 0) {
+			$_SESSION['message'] = "This Activity has been already Inserted<br/>Please try again";
 		}
 		else {
-			echo "Error:".$sql."<br/>".mysqli_error($conn); 
+			$sql = "INSERT INTO temp_taskactivites VALUES ('$activityid', '$tid', '$tname', '$activity')";
+			if(mysqli_query($conn, $sql)) {
+				$query_record = "SELECT * FROM temp_taskactivites";
+				$result_set2 = mysqli_query($conn, $query_record);
+
+				if(mysqli_num_rows($result_set2) > 0) {
+					while($result2 = mysqli_fetch_array($result_set2)) {
+						$record = $record."<tr> <td>{$result2['temp_tname']}</td> <td>{$result2['temp_activityid']}</td> <td>{$result2['temp_activity']}</td> </tr>";
+					}
+				}
+
+			}
+			else {
+				echo "Error:".$sql."<br/>".mysqli_error($conn); 
+			}
 		}
+
+		
 
 		/*$row = $row."<tr> <td>{$tid}</td> <td>{$activityid}</td> <td>{$activity}</td </tr>";*/
 
